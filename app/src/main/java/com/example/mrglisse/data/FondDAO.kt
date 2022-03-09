@@ -12,7 +12,7 @@ interface FondDAO {
     suspend fun addFond(fond: Fond)
 
     @Query("SELECT * FROM fond_table ORDER BY id ASC")
-    suspend fun selectAllFonds(): LiveData<List<Fond>>
+    fun selectAllFonds(): LiveData<List<Fond>>
 
     @Query("SELECT * FROM fond_table WHERE id = :id")
     suspend fun selectFond(id: Int)

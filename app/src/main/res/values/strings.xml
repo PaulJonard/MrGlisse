@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MrGlisse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstDescription">Consulter une liste de ski de descente</string>
+    <string name="firstTitle">Ski alpin</string>
+    <string name="next">Suivant</string>
+    <string name="secondTitle">Ski de fond</string>
+    <string name="secondDescription">Consulter notre catalogue de ski de fond</string>
+    <string name="thirdDescription">Toutes une gestion du catalogue au bout des doigts</string>
+    <string name="thirdTitle">C.R.U.D</string>
+    <string name="finish">Fin</string>
 </resources>

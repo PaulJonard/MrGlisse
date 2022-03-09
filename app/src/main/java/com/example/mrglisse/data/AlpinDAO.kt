@@ -11,7 +11,7 @@ interface AlpinDAO {
     suspend fun addAlpin(alpin: Alpin)
 
     @Query("SELECT * FROM alpin_table ORDER BY id ASC")
-    suspend fun selectAllAlpins(): LiveData<List<Alpin>>
+    fun selectAllAlpins(): LiveData<List<Alpin>>
 
     @Query("SELECT * FROM alpin_table WHERE id = :id")
     suspend fun selectAlpin(id: Int)
