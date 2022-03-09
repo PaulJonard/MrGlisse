@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/alpinStockFragment"
+        android:title="@string/mi_alpin_title"
+        android:icon="@drawable/ic_ski_alpin_sticker"/>
+    <item
+        android:id="@+id/fondStockFragment"
+        android:title="@string/mi_fond_title"
+        android:icon="@drawable/ic_ski_fond_sticker"/>
+</menu>

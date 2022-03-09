@@ -21,7 +21,7 @@ class ThirdFragment : Fragment() {
 
         val finish = view.findViewById<TextView>(R.id.finish)
         finish.setOnClickListener{
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_alpinStockFragment)
             onBoardingFinished()
         }
 

@@ -16,8 +16,13 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_splashFragment_to_alpinStockFragment"
+            app:destination="@id/alpinStockFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_fondStockFragment"
+            app:destination="@id/fondStockFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -27,14 +32,39 @@
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
-            android:id="@+id/action_viewPagerFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_viewPagerFragment_to_alpinStockFragment"
+            app:destination="@id/alpinStockFragment"
             app:popUpTo="@id/viewPagerFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.mrglisse.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/alpinStockFragment"
+        android:name="com.example.mrglisse.fragments.AlpinStockFragment"
+        android:label="fragment_alpin_stock"
+        tools:layout="@layout/fragment_alpin_master" >
+        <action
+            android:id="@+id/action_alpinStockFragment_to_skiDetailFragment"
+            app:destination="@id/skiDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fondStockFragment"
+        android:name="com.example.mrglisse.fragments.FondStockFragment"
+        android:label="fragment_fond_stock"
+        tools:layout="@layout/fragment_fond_master">
+        <action
+            android:id="@+id/action_fondStockFragment_to_skiDetailFragment"
+            app:destination="@id/skiDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/skiDetailFragment"
+        android:name="com.example.mrglisse.fragments.SkiDetailFragment"
+        android:label="fragment_ski_detail"
+        tools:layout="@layout/fragment_ski_detail">
+        <action
+            android:id="@+id/action_skiDetailFragment_to_fondStockFragment"
+            app:destination="@id/fondStockFragment" />
+        <action
+            android:id="@+id/action_skiDetailFragment_to_alpinStockFragment"
+            app:destination="@id/alpinStockFragment" />
+    </fragment>
 </navigation>

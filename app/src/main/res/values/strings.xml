@@ -10,4 +10,6 @@
     <string name="thirdDescription">Toutes une gestion du catalogue au bout des doigts</string>
     <string name="thirdTitle">C.R.U.D</string>
     <string name="finish">Fin</string>
+    <string name="mi_fond_title">Ski de fond</string>
+    <string name="mi_alpin_title">Ski alpin</string>
 </resources>
