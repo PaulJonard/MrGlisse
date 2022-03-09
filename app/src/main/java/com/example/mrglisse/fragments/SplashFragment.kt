@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.mrglisse.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SplashFragment : Fragment() {
 
@@ -18,11 +19,13 @@ class SplashFragment : Fragment() {
     ): View? {
         Handler().postDelayed({
             if(onBoardingFinished()){
+                val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNavigationView.visibility = View.VISIBLE
                 findNavController().navigate(R.id.action_splashFragment_to_alpinStockFragment)
             }else{
                 findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
             }
-        }, 3000)
+        }, 2000)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }

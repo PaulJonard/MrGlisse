@@ -12,4 +12,5 @@
     <string name="finish">Fin</string>
     <string name="mi_fond_title">Ski de fond</string>
     <string name="mi_alpin_title">Ski alpin</string>
+    <string name="skiImageViewDescription">Image de skis</string>
 </resources>
