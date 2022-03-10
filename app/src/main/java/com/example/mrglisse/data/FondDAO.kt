@@ -15,7 +15,7 @@ interface FondDAO {
     fun selectAllFonds(): LiveData<List<Fond>>
 
     @Query("SELECT * FROM fond_table WHERE id = :id")
-    suspend fun selectFond(id: Int)
+    fun selectFond(id: Int):LiveData<Fond>
 
     @Update
     suspend fun  updateFond(fond: Fond)

@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_alpinStockFragment_to_skiDetailFragment"
             app:destination="@id/skiDetailFragment" />
+        <action
+            android:id="@+id/action_alpinStockFragment_to_addFragment"
+            app:destination="@id/addFragment" />
     </fragment>
     <fragment
         android:id="@+id/fondStockFragment"
@@ -54,10 +57,13 @@
         <action
             android:id="@+id/action_fondStockFragment_to_skiDetailFragment"
             app:destination="@id/skiDetailFragment" />
+        <action
+            android:id="@+id/action_fondStockFragment_to_addFragment"
+            app:destination="@id/addFragment" />
     </fragment>
     <fragment
         android:id="@+id/skiDetailFragment"
-        android:name="com.example.mrglisse.fragments.SkiDetailFragment"
+        android:name="com.example.mrglisse.fragments.detail.SkiDetailFragment"
         android:label="fragment_ski_detail"
         tools:layout="@layout/fragment_ski_detail">
         <action
@@ -66,5 +72,17 @@
         <action
             android:id="@+id/action_skiDetailFragment_to_alpinStockFragment"
             app:destination="@id/alpinStockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.mrglisse.fragments.detail.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_alpinStockFragment"
+            app:destination="@id/alpinStockFragment" />
+        <action
+            android:id="@+id/action_addFragment_to_fondStockFragment"
+            app:destination="@id/fondStockFragment" />
     </fragment>
 </navigation>

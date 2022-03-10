@@ -14,10 +14,11 @@ interface AlpinDAO {
     fun selectAllAlpins(): LiveData<List<Alpin>>
 
     @Query("SELECT * FROM alpin_table WHERE id = :id")
-    suspend fun selectAlpin(id: Int)
+    fun selectAlpin(id: Int): LiveData<Alpin>
 
     @Update
     suspend fun  updateAlpin(alpin: Alpin)
+
 
     @Delete
     suspend fun deleteAlpin(alpin: Alpin)

@@ -1,11 +1,12 @@
 package com.example.mrglisse.model
 
 abstract class Ski(
-    private val brand:String,
-    private val model: String,
-    private val price: Double,
-    private val size: Int
+    open val brand:String,
+    open val model: String,
+    open val price: Double,
+    open val size: Int
 ) {
+
 
     abstract fun showOverView():String
 

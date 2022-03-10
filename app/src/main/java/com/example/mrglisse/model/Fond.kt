@@ -7,10 +7,10 @@ import androidx.room.PrimaryKey
 data class Fond(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val brand: String,
-    val model: String,
-    val price: Double,
-    val size: Int,
+    override val brand: String,
+    override val model: String,
+    override val price: Double,
+    override val size: Int,
 ) : Ski(brand, model, price, size
 ) {
     override fun showOverView(): String {

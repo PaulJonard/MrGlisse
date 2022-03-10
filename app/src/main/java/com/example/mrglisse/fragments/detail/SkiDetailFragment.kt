@@ -1,4 +1,4 @@
-package com.example.mrglisse.fragments
+package com.example.mrglisse.fragments.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

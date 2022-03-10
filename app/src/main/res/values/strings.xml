@@ -13,4 +13,9 @@
     <string name="mi_fond_title">Ski de fond</string>
     <string name="mi_alpin_title">Ski alpin</string>
     <string name="skiImageViewDescription">Image de skis</string>
+    <string name="addDetailBrand">Marque</string>
+    <string name="model">Modèle</string>
+    <string name="addDetailButton">Ajouter</string>
+    <string name="infoSuccess">Ajout avec succés!</string>
+    <string name="infoVoid">Remplissez tout les champs</string>
 </resources>

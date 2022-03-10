@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mrglisse.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ThirdFragment : Fragment() {
     override fun onCreateView(
@@ -22,6 +23,8 @@ class ThirdFragment : Fragment() {
         val finish = view.findViewById<TextView>(R.id.finish)
         finish.setOnClickListener{
             findNavController().navigate(R.id.action_viewPagerFragment_to_alpinStockFragment)
+            val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+            bottomNavigationView.visibility = View.VISIBLE
             onBoardingFinished()
         }
 
