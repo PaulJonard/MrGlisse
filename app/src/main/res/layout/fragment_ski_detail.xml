@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/skiImageViewDescription" />
 
-    <TextView
+    <EditText
         android:id="@+id/detailBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailImageView"/>
 
-    <TextView
+    <EditText
         android:id="@+id/detailModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/detailModel"
         app:layout_constraintBottom_toTopOf="@id/detailSize"/>
 
-    <TextView
+    <EditText
         android:id="@+id/detailSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +51,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailModel"/>
 
+    <EditText
+        android:id="@+id/detailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailSize"/>
     <TextView
         android:id="@+id/detailOverView"
         android:layout_width="wrap_content"
@@ -58,6 +66,32 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailSize"/>
+        app:layout_constraintTop_toBottomOf="@id/detailPrice"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/detailUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_update_24" />
+
+        <ImageButton
+            android:id="@+id/detailDetele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_delete_forever_24" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

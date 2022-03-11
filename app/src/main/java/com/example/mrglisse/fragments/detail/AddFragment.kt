@@ -13,38 +13,29 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentAddBinding
 import com.example.mrglisse.model.Alpin
 import com.example.mrglisse.model.Fond
 import com.example.mrglisse.viewmodel.AlpinViewModel
 import com.example.mrglisse.viewmodel.FondViewModel
 
 class AddFragment : Fragment() {
+    private lateinit var binding: FragmentAddBinding
+
     private lateinit var alpinViewModel: AlpinViewModel
     private lateinit var fondViewModel: FondViewModel
-
-    private lateinit var brandEditText: EditText
-    private lateinit var modelEditText: EditText
-    private lateinit var priceEditText: EditText
-    private lateinit var sizeEditText: EditText
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add, container, false)
-
-        brandEditText = view.findViewById(R.id.addDetailBrand)
-        modelEditText = view.findViewById(R.id.addDetailModel)
-        priceEditText = view.findViewById(R.id.addDetailPrice)
-        sizeEditText = view.findViewById(R.id.addDetailSize)
+        binding = FragmentAddBinding.inflate(layoutInflater, container, false)
 
         val alpinBundle = requireArguments().get("ALPIN_VIEW_MODEL")
         val fondBundle = requireArguments().get("FOND_VIEW_MODEL")
 
-        val addButton = view.findViewById<Button>(R.id.addDetailButton)
-        addButton.setOnClickListener {
+        binding.addDetailButton.setOnClickListener {
             if (alpinBundle != null){
                 alpinViewModel = ViewModelProvider(this)[AlpinViewModel::class.java]
                 insertToDataBase(Alpin::class.java)
@@ -55,22 +46,22 @@ class AddFragment : Fragment() {
             }
         }
 
-        return view
+        return binding.root
     }
 
     private fun <T: Any> insertToDataBase(skiType : Class<T>){
-        val brand = brandEditText.text.toString()
-        val model = modelEditText.text.toString()
-        val price = priceEditText.text
-        val size = sizeEditText.text
+        val brand = binding.addDetailBrand.text.toString()
+        val model = binding.addDetailModel.text.toString()
+        val price = binding.addDetailPrice.text
+        val size = binding.addDetailSize.text
 
         if (inputCheck(brand, model, price, size)){
-            if(skiType.isAssignableFrom(Alpin::class.java)){ //Réfléction de type juste pour pas avoir à faire deux méthodes d'insert suivant le type d'objet
+            if(skiType.isAssignableFrom(Alpin::class.java)){ //Réfléction de type, juste pour pas avoir à faire deux méthodes d'insert suivant le type d'objet
                 //Create object
                 val alpin = Alpin(0, brand, model, price.toString().toDouble(), size.toString().toInt())
                 //Add data to database
                 alpinViewModel.addAlpin(alpin)
-                Toast.makeText(requireContext(), R.string.infoSuccess, Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), R.string.infoSuccess, Toast.LENGTH_SHORT).show()
                 //Navigate Back
                 findNavController().navigate(R.id.action_addFragment_to_alpinStockFragment)
 
@@ -79,7 +70,7 @@ class AddFragment : Fragment() {
                 val fond = Fond(0, brand, model, price.toString().toDouble(), size.toString().toInt())
                 //Add data to database
                 fondViewModel.addFond(fond)
-                Toast.makeText(requireContext(), R.string.infoSuccess, Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), R.string.infoSuccess, Toast.LENGTH_SHORT).show()
                 //Navigate Back
                 findNavController().navigate(R.id.action_addFragment_to_fondStockFragment)
             }

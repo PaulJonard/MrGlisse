@@ -8,22 +8,25 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentAddBinding
+import com.example.mrglisse.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
+    private lateinit var binding: FragmentFirstBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_first, container, false)
+        binding = FragmentFirstBinding.inflate(layoutInflater, container, false)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-        val next = view.findViewById<TextView>(R.id.next1)
-        next.setOnClickListener{
+        binding.next1.setOnClickListener{
             viewPager?.currentItem = 1
         }
 
-        return view
+        return binding.root
     }
 }

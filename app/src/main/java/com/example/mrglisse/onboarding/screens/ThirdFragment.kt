@@ -10,25 +10,27 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentAddBinding
+import com.example.mrglisse.databinding.FragmentThirdBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ThirdFragment : Fragment() {
+    private lateinit var binding: FragmentThirdBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_third, container, false)
+        binding = FragmentThirdBinding.inflate(layoutInflater, container, false)
 
-        val finish = view.findViewById<TextView>(R.id.finish)
-        finish.setOnClickListener{
+        binding.finish.setOnClickListener{
             findNavController().navigate(R.id.action_viewPagerFragment_to_alpinStockFragment)
             val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
             bottomNavigationView.visibility = View.VISIBLE
             onBoardingFinished()
         }
 
-        return view
+        return binding.root
     }
 
     private fun onBoardingFinished(){

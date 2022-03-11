@@ -40,5 +40,4 @@ class AlpinViewModel(application: Application): AndroidViewModel(application) {
             repository.deleteAlpin(alpin)
         }
     }
-
 }

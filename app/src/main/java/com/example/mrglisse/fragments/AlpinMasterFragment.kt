@@ -11,10 +11,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentAddBinding
+import com.example.mrglisse.databinding.FragmentAlpinMasterBinding
 import com.example.mrglisse.viewmodel.AlpinViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class AlpinStockFragment : Fragment() {
+class AlpinMasterFragment : Fragment() {
+    private lateinit var binding: FragmentAlpinMasterBinding
 
     private lateinit var alpinViewModel: AlpinViewModel
     override fun onCreateView(
@@ -22,25 +25,23 @@ class AlpinStockFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_alpin_master, container, false)
+        binding = FragmentAlpinMasterBinding.inflate(layoutInflater, container, false)
 
         val adapter = ListAdapter()
-        val recyclerView:RecyclerView = view.findViewById(R.id.alpinRecyclerView)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.alpinRecyclerView.adapter = adapter
+        binding.alpinRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         alpinViewModel = ViewModelProvider(this)[AlpinViewModel::class.java]
         alpinViewModel.readAllAlpins.observe(viewLifecycleOwner, Observer { alpin ->
             adapter.setData(alpin)
         })
 
-        val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.alpinAddButton)
-        floatingActionButton.setOnClickListener {
+        binding.alpinAddButton.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("ALPIN_VIEW_MODEL", AlpinViewModel::class.java)
             findNavController().navigate(R.id.action_alpinStockFragment_to_addFragment, bundle)
         }
 
-        return view
+        return binding.root
     }
 }

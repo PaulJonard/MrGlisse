@@ -16,6 +16,10 @@
     <string name="addDetailBrand">Marque</string>
     <string name="model">Modèle</string>
     <string name="addDetailButton">Ajouter</string>
-    <string name="infoSuccess">Ajout avec succés!</string>
+    <string name="infoSuccess">Ajout avec succès!</string>
     <string name="infoVoid">Remplissez tout les champs</string>
+    <string name="infoError">Erreur, aucun objet passé en safeArgs</string>
+    <string name="infoDelete">Etes-vous sûr de vouloir supprimer cet item?</string>
+    <string name="infoUpdateSuccess">Mis à jour avec succès</string>
+    <string name="infoDeleteSuccess">Supprimé avec succès</string>
 </resources>

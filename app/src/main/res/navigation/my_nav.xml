@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/alpinStockFragment"
-        android:name="com.example.mrglisse.fragments.AlpinStockFragment"
+        android:name="com.example.mrglisse.fragments.AlpinMasterFragment"
         android:label="fragment_alpin_stock"
         tools:layout="@layout/fragment_alpin_master" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/fondStockFragment"
-        android:name="com.example.mrglisse.fragments.FondStockFragment"
+        android:name="com.example.mrglisse.fragments.FondMasterFragment"
         android:label="fragment_fond_stock"
         tools:layout="@layout/fragment_fond_master">
         <action
@@ -72,6 +72,14 @@
         <action
             android:id="@+id/action_skiDetailFragment_to_alpinStockFragment"
             app:destination="@id/alpinStockFragment" />
+        <argument
+            android:name="currentFond"
+            app:argType="com.example.mrglisse.model.Fond"
+            app:nullable="true" />
+        <argument
+            android:name="currentAlpin"
+            app:argType="com.example.mrglisse.model.Alpin"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"

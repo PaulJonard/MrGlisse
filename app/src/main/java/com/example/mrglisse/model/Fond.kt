@@ -1,8 +1,11 @@
 package com.example.mrglisse.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "fond_table")
 data class Fond(
     @PrimaryKey(autoGenerate = true)
@@ -12,8 +15,8 @@ data class Fond(
     override val price: Double,
     override val size: Int,
 ) : Ski(brand, model, price, size
-) {
+), Parcelable {
     override fun showOverView(): String {
-        TODO("Not yet implemented")
+        return "not yet implemented"
     }
 }

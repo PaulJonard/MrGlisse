@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentViewPagerBinding
 import com.example.mrglisse.onboarding.screens.FirstFragment
 import com.example.mrglisse.onboarding.screens.SecondFragment
 import com.example.mrglisse.onboarding.screens.ThirdFragment
 
 class ViewPagerFragment : Fragment() {
-
-    private lateinit var viewPager: ViewPager2
+    private lateinit var binding: FragmentViewPagerBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,8 +21,7 @@ class ViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_view_pager, container, false)
-        viewPager = view.findViewById(R.id.viewPager)
+        binding = FragmentViewPagerBinding.inflate(layoutInflater, container, false)
 
         val fragmentList = arrayListOf<Fragment>(
             FirstFragment(),
@@ -36,9 +35,9 @@ class ViewPagerFragment : Fragment() {
             lifecycle
         )
 
-        viewPager.adapter = adapter
+        binding.viewPager.adapter = adapter
 
-        return view
+        return binding.root
     }
 
 }

@@ -11,11 +11,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mrglisse.R
+import com.example.mrglisse.databinding.FragmentAddBinding
+import com.example.mrglisse.databinding.FragmentFondMasterBinding
 import com.example.mrglisse.viewmodel.AlpinViewModel
 import com.example.mrglisse.viewmodel.FondViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class FondStockFragment : Fragment() {
+class FondMasterFragment : Fragment() {
+    private lateinit var binding: FragmentFondMasterBinding
 
     private lateinit var fondViewModel: FondViewModel
     override fun onCreateView(
@@ -23,25 +26,24 @@ class FondStockFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_fond_master, container, false)
+        binding = FragmentFondMasterBinding.inflate(layoutInflater, container, false)
 
         val adapter = ListAdapter()
-        val recyclerView: RecyclerView = view.findViewById(R.id.fondRecyclerView)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.fondRecyclerView.adapter = adapter
+        binding.fondRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         fondViewModel = ViewModelProvider(this)[FondViewModel::class.java]
         fondViewModel.readAllFonds.observe(viewLifecycleOwner, Observer { fond ->
             adapter.setData(fond)
         })
 
-        val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.fondAddButton)
-        floatingActionButton.setOnClickListener {
+        binding.fondAddButton.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("FOND_VIEW_MODEL", FondViewModel::class.java)
             findNavController().navigate(R.id.action_fondStockFragment_to_addFragment, bundle)
         }
 
-        return view
+        return binding.root
     }
 }
