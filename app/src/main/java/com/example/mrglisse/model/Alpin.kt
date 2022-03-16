@@ -17,6 +17,9 @@ data class Alpin(
 ): Ski(brand, model, price, size
 ), Parcelable {
     override fun showOverView(): String {
-        return "not yet implemented"
+        val toReturn = StringBuilder()
+        toReturn.appendLine("Une paire de ski adapté pour les pistes!")
+        toReturn.appendLine("Les skis " + this.model + " part leur longueur de " + this.size + "cm, offres un mordant exceptionnel!")
+        return toReturn.toString()
     }
 }

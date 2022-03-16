@@ -4,32 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.detail.SkiDetailFragment">
+    tools:context=".fragments.detail.SkiDetailFragment"
+    android:background="@drawable/ic_pattern">
 
-    <ImageView
-        android:id="@+id/detailImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/skiImageViewDescription" />
 
     <EditText
         android:id="@+id/detailBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:padding="5sp"
+        android:background="#4DFFA07A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailImageView"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/detailModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:padding="5sp"
+        android:background="#4DFFA07A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailBrand"/>
@@ -37,6 +35,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="2dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailModel"
@@ -47,6 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:inputType="numberDecimal"
+        android:padding="5sp"
+        android:background="#4DFFA07A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailModel"/>
@@ -56,6 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:inputType="number"
+        android:padding="5sp"
+        android:background="#4DFFA07A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailSize"/>
@@ -64,6 +71,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:padding="5sp"
+        android:textSize="15sp"
+        android:background="#4DFFA07A"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailPrice"/>

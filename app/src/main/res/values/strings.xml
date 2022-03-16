@@ -14,7 +14,7 @@
     <string name="mi_alpin_title">Ski alpin</string>
     <string name="skiImageViewDescription">Image de skis</string>
     <string name="addDetailBrand">Marque</string>
-    <string name="model">Modèle</string>
+    <string name="addDetailModel">Modèle</string>
     <string name="addDetailButton">Ajouter</string>
     <string name="infoSuccess">Ajout avec succès!</string>
     <string name="infoVoid">Remplissez tout les champs</string>
@@ -22,4 +22,6 @@
     <string name="infoDelete">Etes-vous sûr de vouloir supprimer cet item?</string>
     <string name="infoUpdateSuccess">Mis à jour avec succès</string>
     <string name="infoDeleteSuccess">Supprimé avec succès</string>
+    <string name="addDetailPrice">Prix (€)</string>
+    <string name="addDetailSize">Taille (cm)</string>
 </resources>
