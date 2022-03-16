@@ -84,7 +84,6 @@ class SkiDetailFragment : Fragment() {
 
                     Toast.makeText(requireContext(), R.string.infoUpdateSuccess, Toast.LENGTH_SHORT).show()
 
-                    bottomNavigationView.visibility = View.VISIBLE
                     findNavController().navigate(R.id.action_skiDetailFragment_to_alpinStockFragment)
                 }
                 is Fond -> {
@@ -93,7 +92,6 @@ class SkiDetailFragment : Fragment() {
 
                     Toast.makeText(requireContext(), R.string.infoUpdateSuccess, Toast.LENGTH_SHORT).show()
 
-                    bottomNavigationView.visibility = View.VISIBLE
                     findNavController().navigate(R.id.action_skiDetailFragment_to_fondStockFragment)
                 }
                 else -> Toast.makeText(requireContext(), R.string.infoError, Toast.LENGTH_LONG).show()
@@ -112,14 +110,12 @@ class SkiDetailFragment : Fragment() {
 
                     Toast.makeText(requireContext(), R.string.infoDeleteSuccess, Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_skiDetailFragment_to_alpinStockFragment)
-                    bottomNavigationView.visibility = View.VISIBLE
                 }
                 is Fond -> {
                     fondViewModel.deleteFond(ski)
 
                     Toast.makeText(requireContext(), R.string.infoDeleteSuccess, Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_skiDetailFragment_to_fondStockFragment)
-                    bottomNavigationView.visibility = View.VISIBLE
                 }
                 else -> Toast.makeText(requireContext(), R.string.infoError, Toast.LENGTH_LONG).show()
             }

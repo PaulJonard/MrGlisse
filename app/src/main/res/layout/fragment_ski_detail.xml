@@ -8,6 +8,17 @@
     android:background="@drawable/ic_pattern">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detailBrand"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/detailBrand"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/detailModel"
+        android:layout_marginEnd="5sp"/>
     <EditText
         android:id="@+id/detailBrand"
         android:layout_width="wrap_content"
@@ -20,6 +31,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detailModel"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/detailModel"
+        app:layout_constraintBottom_toBottomOf="@id/detailModel"
+        android:layout_marginEnd="5sp"/>
     <EditText
         android:id="@+id/detailModel"
         android:layout_width="wrap_content"
@@ -41,6 +62,16 @@
         app:layout_constraintTop_toBottomOf="@id/detailModel"
         app:layout_constraintBottom_toTopOf="@id/detailSize"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detailSize"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/detailSize"
+        app:layout_constraintBottom_toBottomOf="@id/detailSize"
+        android:layout_marginEnd="5sp"/>
     <EditText
         android:id="@+id/detailSize"
         android:layout_width="wrap_content"
@@ -54,6 +85,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailModel"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detailPrice"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/detailPrice"
+        app:layout_constraintBottom_toBottomOf="@id/detailPrice"
+        android:layout_marginEnd="5sp"/>
     <EditText
         android:id="@+id/detailPrice"
         android:layout_width="wrap_content"

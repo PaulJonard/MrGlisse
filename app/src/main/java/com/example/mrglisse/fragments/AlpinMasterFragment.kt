@@ -14,10 +14,12 @@ import com.example.mrglisse.R
 import com.example.mrglisse.databinding.FragmentAddBinding
 import com.example.mrglisse.databinding.FragmentAlpinMasterBinding
 import com.example.mrglisse.viewmodel.AlpinViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class AlpinMasterFragment : Fragment() {
     private lateinit var binding: FragmentAlpinMasterBinding
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var alpinViewModel: AlpinViewModel
     override fun onCreateView(
@@ -43,5 +45,11 @@ class AlpinMasterFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.visibility = View.VISIBLE
     }
 }

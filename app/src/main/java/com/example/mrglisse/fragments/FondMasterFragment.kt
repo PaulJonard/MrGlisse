@@ -15,10 +15,12 @@ import com.example.mrglisse.databinding.FragmentAddBinding
 import com.example.mrglisse.databinding.FragmentFondMasterBinding
 import com.example.mrglisse.viewmodel.AlpinViewModel
 import com.example.mrglisse.viewmodel.FondViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FondMasterFragment : Fragment() {
     private lateinit var binding: FragmentFondMasterBinding
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var fondViewModel: FondViewModel
     override fun onCreateView(
@@ -45,5 +47,11 @@ class FondMasterFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.visibility = View.VISIBLE
     }
 }

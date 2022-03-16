@@ -17,6 +17,9 @@ data class Fond(
 ) : Ski(brand, model, price, size
 ), Parcelable {
     override fun showOverView(): String {
-        return "not yet implemented"
+        val toReturn = StringBuilder()
+        toReturn.appendLine("Une paire de ski adaptée pour le plat!")
+        toReturn.appendLine("Les skis " + this.model + " part leur longueur de " + this.size + "cm, vous fatigueront moins sur la distance!")
+        return toReturn.toString()
     }
 }
